@@ -1,0 +1,19 @@
+# Makefile – Library Management System
+
+CXX      = g++
+CXXFLAGS = -std=c++17 -Wall -Wextra
+TARGET   = lms
+SRC      = library_management.cpp
+
+all: $(TARGET)
+
+$(TARGET): $(SRC)
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRC)
+
+run: $(TARGET)
+	./$(TARGET)
+
+clean:
+	rm -f $(TARGET) books.dat members.dat records.dat
+
+.PHONY: all run clean
